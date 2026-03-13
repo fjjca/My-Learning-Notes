@@ -14,7 +14,7 @@
 
 cmd，输入mysql验证是否添加成功。看到error不要害怕，准确地说，如果出现ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost'...，反而说明mysql命令已经找到，环境变量添加成功了，如果出现"mysql不是内部或外部命令，也不是可运行的程序或批处理文件"才表示添加失败，需要重新再试。
 
-#2.创建配置文件
+# 2.创建配置文件
 
 新建data文件夹存放数据，新建my.txt文档，后缀改成.ini，添加以下内容：
 
