@@ -121,6 +121,6 @@ net stop mysql
 
 
 -------------------------------------------------------------
-附：如果你安装后打开Navicat等工具连接时出现类似的提示，请输入下面一行命令
-navicat1251
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+附：如果你安装后打开Navicat等工具连接时出现类似的提示，请输入下面一行命令 
+navicat1251 
+`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';`
