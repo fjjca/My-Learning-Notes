@@ -1,8 +1,11 @@
+# 前言
+在专业学习刚开始使用MySQL时，在安装上一些的一些问题，以及用于帮助别人安装（当时帮了几个同学安装，或者解决问题）
+
 解压版MySQL的配置安装
 官方下载：https://www.mysql.com/downloads/
 社区版，由于官网旧版本似乎没有直装，选择解压版
 
-1.添加环境变量
+# 1.添加环境变量
 
 解压完之后，打开bin文件夹，将路径（~~\bin）复制，添加到系统的环境变量（系统变量里面的Path）中。
 
@@ -11,7 +14,7 @@
 
 cmd，输入mysql验证是否添加成功。看到error不要害怕，准确地说，如果出现ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost'...，反而说明mysql命令已经找到，环境变量添加成功了，如果出现"mysql不是内部或外部命令，也不是可运行的程序或批处理文件"才表示添加失败，需要重新再试。
 
-2.创建配置文件
+#2.创建配置文件
 
 新建data文件夹存放数据，新建my.txt文档，后缀改成.ini，添加以下内容：
 
@@ -62,20 +65,20 @@ default-storage-engine=INNODB
 character-set-server=utf8mb4
 因为MySQL 8.0 及以后版本utf8mb4才是真正完整的UTF-8实现（支持emoji等），而utf8在MySQL中是它的一个子集
 
-3.然后初始化，在cmd里面输入
+# 3.然后初始化，在cmd里面输入
 mysqld --initialize
 这个命令会生成一个随机的临时密码，初始化之后，data文件中会生成很多文件。找到【电脑用户名.err】文件打开，找到初始化的密码(localhost后边的一串)。
 ![c8ca07786c51cff493a76a0bce190ccd](https://github.com/user-attachments/assets/f3645433-c651-435d-af55-6fe0f0f951a1)
 
 
-4.安装MySQL服务
+# 4.安装MySQL服务
 mysqld --install
 
 在输入安装命令进行安装的时候遇到了这样的问题，提示错误信息"Install/Remove of the Service Denied"
 解决的方法是：用管理员身份打开cmd。
 
 
-5.启动MySQL
+# 5.启动MySQL
 安装成功后，启动MySQL服务
 
 net start mysql
@@ -85,7 +88,7 @@ net start mysql
 mysqld --remove
 mysqld --install
 }
-6.登录MySQL
+# 6.登录MySQL
 
 输入以下命令，用root账号和刚刚err文件中的随机密码登录MySQL。(注意：千万不要把mysql输入成mysqld)
 
