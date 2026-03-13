@@ -9,7 +9,7 @@
 ![bcb28c03e5f856e121a4a71bbdccc2a0](https://github.com/user-attachments/assets/c5a9f64f-5717-410b-9f59-e6e8ea2c758b)
 
 
-cmd，输入mysql验证是否添加成功。看到error不要害怕，如果出现这一行则说明添加成功，如果出现"mysql不是内部或外部命令，也不是可运行的程序或批处理文件"才表示添加失败，需要重新再试。
+cmd，输入mysql验证是否添加成功。看到error不要害怕，准确地说，如果出现ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost'...，反而说明mysql命令已经找到，环境变量添加成功了，如果出现"mysql不是内部或外部命令，也不是可运行的程序或批处理文件"才表示添加失败，需要重新再试。
 
 2.创建配置文件
 
@@ -60,10 +60,11 @@ default-storage-engine=INNODB
 
 有可能需要改一行
 character-set-server=utf8mb4
+因为MySQL 8.0 及以后版本utf8mb4才是真正完整的UTF-8实现（支持emoji等），而utf8在MySQL中是它的一个子集
 
 3.然后初始化，在cmd里面输入
 mysqld --initialize
-初始化之后，data文件中会生成很多文件。找到【电脑用户名.err】文件打开，找到初始化的密码(localhost后边的一串)。
+这个命令会生成一个随机的临时密码，初始化之后，data文件中会生成很多文件。找到【电脑用户名.err】文件打开，找到初始化的密码(localhost后边的一串)。
 ![c8ca07786c51cff493a76a0bce190ccd](https://github.com/user-attachments/assets/f3645433-c651-435d-af55-6fe0f0f951a1)
 
 
