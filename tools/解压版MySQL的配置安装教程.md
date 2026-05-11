@@ -90,7 +90,7 @@ mysqld --install
 }
 # 6.登录MySQL
 
-输入以下命令，用root账号和刚刚err文件中的随机密码登录MySQL。(注意：千万不要把mysql输入成mysqld)
+输入以下命令，用root账号和刚刚err文件中的随机密码登录MySQL。(注意拼写不要错)
 
 mysql -u root -p
 
